@@ -1,0 +1,11 @@
+
+services: # Define os serviços do Docker Compose
+  app: # Define o serviço da aplicação
+    build: . # Usa o Dockerfile no diretório atual
+    container_name: imersao_devops_api
+    ports:
+      - "8000:8000" # Mapeia a porta 8000 do contêiner para a porta 8000 do host
+    volumes:
+      # Monta o diretório atual no diretório /app do contêiner
+      # Isso permite o hot-reload e a persistência do banco de dados SQLite
+      - .:/app
